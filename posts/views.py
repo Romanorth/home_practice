@@ -1,8 +1,13 @@
 from django.shortcuts import render, HttpResponse
 
 
+TEMPLATES = {
+    'index': 'templates/posts/index.html',
+}
+
+
 def index(request):
-    return HttpResponse('My response')
+    return render(request, TEMPLATES['index'])
 
 
 def group_posts(request, any_slug):
